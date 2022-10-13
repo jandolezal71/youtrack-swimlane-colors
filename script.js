@@ -8,6 +8,8 @@
 // @run-at               document-end
 // ==/UserScript==
 (async () => {
+	const colorByLaneProjectId = {};
+
 	function waitForElm(selector) {
 		return new Promise(resolve => {
 			if (document.querySelector(selector)) {
@@ -34,8 +36,6 @@
 
 		const getRandomColor = () => Math.floor(Math.random()*16777215).toString(16);
 		const setElementColor = (element, color) => element.style.color = `#${color}`;
-
-		const colorByLaneProjectId = {};
 
 		const swimlaneElements = $(`[data-test="${SWIMLANE_DATA_SELECTOR}"]`);
 
